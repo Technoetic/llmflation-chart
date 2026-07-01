@@ -50,7 +50,7 @@ new Chart(document.getElementById("sotaChart"), {
     responsive: true, maintainAspectRatio: false,
     animation: { duration: 1500, easing: "easeOutQuart" },
     interaction: { mode: "index", intersect: false },
-    layout: { padding: { top: 34, right: 20, bottom: 8, left: 4 } },
+    layout: { padding: { top: 34, right: 24, bottom: 22, left: 4 } },
     plugins: {
       legend: { labels: { usePointStyle: true, padding: 22, font: { size: 15, weight: 700 } } },
       tooltip: tip({ callbacks: { label: (c) =>
@@ -58,15 +58,20 @@ new Chart(document.getElementById("sotaChart"), {
       annotation: { annotations: {
         up: {
           type: "label", xValue: "2024\nGPT-4o", yValue: 49.9, yScaleID: "yPerf",
-          content: ["↑ 강해진다"], color: COL.up, font: { weight: 800, size: 17 },
+          content: ["↑ 강해진다"], color: COL.up,
+          font: (c) => ({ weight: 800, size: c.chart.width < 520 ? 14 : 17 }),
           backgroundColor: "rgba(7,11,22,0.72)", borderRadius: 6, padding: 5,
-          yAdjust: -48, xAdjust: 44,
+          position: "center", yAdjust: -50,
+          xAdjust: (c) => (c.chart.width < 520 ? 0 : -60),
         },
         down: {
           type: "label", xValue: "2024\nGPT-4o", yValue: 7.5, yScaleID: "yPrice",
-          content: ["↓ 싸진다"], color: COL.down, font: { weight: 800, size: 17 },
+          content: ["↓ 싸진다"], color: COL.down,
+          font: (c) => ({ weight: 800, size: c.chart.width < 520 ? 14 : 17 }),
           backgroundColor: "rgba(7,11,22,0.72)", borderRadius: 6, padding: 5,
-          yAdjust: 46, xAdjust: 40,
+          position: "center",
+          yAdjust: (c) => (c.chart.width < 520 ? 20 : -38),
+          xAdjust: (c) => (c.chart.width < 520 ? 0 : 62),
         },
       }},
     },
