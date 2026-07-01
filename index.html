@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>llm플레이션 — 연도별 SOTA는 싸지면서 강해진다</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+</head>
+<body>
+  <div class="grain"></div>
+  <main class="wrap">
+    <header class="hero">
+      <p class="eyebrow">L L M - F L A T I O N &nbsp;·&nbsp; 연도별 SOTA &nbsp;·&nbsp; 2023 → 2025</p>
+      <h1>해마다 <span class="up">강해지고</span><br class="mob" /> <span class="down">싸진다</span></h1>
+      <p class="sub"><b>성능은 2배 이상 오르고</b>, <b>가격은 1/11로 떨어진다.</b></p>
+    </header>
+
+    <!-- 단 하나의 차트 -->
+    <section class="card hero-card">
+      <div class="chart-box tall"><canvas id="sotaChart"></canvas></div>
+      <p class="note gold">각 연도의 SOTA — <b>2023 GPT-4 · 2024 GPT-4o · 2025 GPT-5</b>. 파랑 <b>성능(GPQA)</b>은 위로, 녹색 <b>가격</b>은 아래로. 두 선이 정확히 반대로 벌어진다.</p>
+    </section>
+  </main>
+  <script src="chart.js"></script>
+</body>
+</html>
